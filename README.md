@@ -2,6 +2,10 @@
 
 A new Flutter application.
 
+# Screenshot
+
+## Home ![Home.png](https://imgbbb.com/images/2019/09/10/Home.png)  Detail ![Detail.png](https://imgbbb.com/images/2019/09/10/Detail.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
