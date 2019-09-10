@@ -17,7 +17,7 @@ class DetailScreen extends StatelessWidget{
       body: Container(
           child: Column(
             children: <Widget>[
-              Image.network(foodImage, width: 360, height: 200 ,fit: BoxFit.cover,),
+              Image.network(foodImage, width: 420, height: 200 ,fit: BoxFit.cover,),
               SizedBox(height: 10,),
               Text(foodName+'\n', style: TextStyle(color: Colors.black, fontSize: 20),),
               Text('Bahan''\n', style: TextStyle(color: Colors.black, fontSize: 16)),
