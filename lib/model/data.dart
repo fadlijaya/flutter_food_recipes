@@ -1,50 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_food_recipes/detail.dart';
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Food Recipes'),
-        ),
-        body: foodRecipesView(),
-      ),
-    );
-  }
-
-  GridView foodRecipesView() => GridView.builder(
-      itemCount: foodName.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemBuilder: (BuildContext context, index) => Center(
-            child: Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-              child: ListTile(
-                title: Column(
-                  children: <Widget>[
-                    Padding(padding: EdgeInsets.all(5.0)),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image.network(foodImage[index], width: 300, height: 100, fit: BoxFit.cover,),
-                    ),
-                    SizedBox(height: 10),
-                    Text(foodName[index], style: TextStyle(color: Colors.blueGrey, fontSize: 13),)
-                  ],
-                ),
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (BuildContext context) => DetailScreen(
-                        foodImage: foodImage[index],
-                        foodName: foodName[index],
-                        foodIngredients: foodIngredients[index],
-                      )));
-                },
-              ),
-            ),
-          ));
-
-  List<String> foodName = [
+class FoodRecipes {
+  static List<String> foodName = [
     'Richeese Fire Wings ala Rumahan',
     'Ayam Bakar Happy Call Praktis',
     'Ayam Presto Tulang Lunak',
@@ -57,7 +12,7 @@ class HomePage extends StatelessWidget {
     'Resep Nasi Kepal Keju',
   ];
 
-  List<String> foodImage = [
+  static List<String> foodImage = [
     'https://resepkoki.co/wp-content/uploads/2019/03/richeese-fire-wings-05.jpg',
     'https://resepkoki.co/wp-content/uploads/2019/03/ayam-bakar-HP-07.jpg',
     'https://resepkoki.co/wp-content/uploads/2018/12/ayam-presto-tulang-lunak-01.jpg',
@@ -70,7 +25,7 @@ class HomePage extends StatelessWidget {
     'https://resepkoki.co/wp-content/uploads/2016/12/1-nasi-kepal-keju.jpg',
   ];
 
-  List<String> foodIngredients = [
+  static List<String> foodIngredients = [
     '1/2 kg sayap ayam\n1 sachet tepung bumbu sasa',
     '1 ekor ayam, potong sesuai selera\n2 batang serai, ambil bagian putihnya, memarkan\n4 lembar daun salam\n20 gr asam jawa, larutkan dan remas-remas dalam 3 sdm air panas, ambil airnya\n500 ml air kelapa',
     '1 ekor ayam pejantan\n3 Liter Air\n4 butir kemiri dihaluskan\n3 siung bawang putih, geprek\n3 ruas lengkuas\n3 lembar daun jeruk\n1 sdm ketumbar bubuk\nGaram, secukupnya',
@@ -82,6 +37,5 @@ class HomePage extends StatelessWidget {
     'Salmon segar, jika masih ada kulitnya tidak apa.\n1 cup cream masak\n100 cc white wine (bisa diganti dengan air)\n1 buah bawang merah, dipotong kecil- kecil\nDaun parseley, diiris halus\nMentega secukupnya untuk menggoreng salmon\nGaram\nLada hitam\n½ buah buah lemon segar, ambil airnya',
     '1 mangkok nasi\n1 butir telur\nKeju parut\nGaram secukupnya\nLada sedikit\nKeju cheddar, potong kotak (untuk isian)\nTepung panir',
   ];
-
-//Source : https://resepkoki.co/resep-masakan/
 }
+//Source : https://resepkoki.co/resep-masakan/

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_recipes/home.dart';
+import 'package:flutter_food_recipes/view/home.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,10 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: HomeScreen(),
     );
   }
-
 }
-
-
