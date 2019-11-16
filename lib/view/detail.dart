@@ -12,33 +12,40 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Detail Food Recipes')),
+      appBar: AppBar(
+          title: Text(
+        'Detail Food Recipes',
+        style: TextStyle(color: Colors.white),
+      )),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Image.network(
-              foodImage,
-              width: 420,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              foodName + '\n',
-              style: TextStyle(color: Colors.black, fontSize: 20),
-            ),
-            Text('Bahan' '\n',
-                style: TextStyle(color: Colors.black, fontSize: 16)),
-            Padding(
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: Text(
-                foodIngredients,
-                style: TextStyle(color: Colors.blueGrey),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Image.network(
+                foodImage,
+                width: 420,
+                height: 240,
+                fit: BoxFit.cover,
               ),
-            )
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                foodName + '\n',
+                style: TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text('Ingredients', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                padding: EdgeInsets.all(5),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(foodIngredients, style: TextStyle(color: Colors.black, fontSize: 13),),
+                padding: EdgeInsets.all(5),
+              )
+            ],
+          ),
         ),
       ),
     );

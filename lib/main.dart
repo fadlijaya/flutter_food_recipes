@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Food Recipes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.green,
       ),
       home: HomeScreen(),
     );
